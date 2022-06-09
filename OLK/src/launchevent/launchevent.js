@@ -124,7 +124,7 @@ function onAppointmentRecurrenceChangedHandler(event){
 
 // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
 //Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
+Office.actions.associate("OnNewAppointmentOrganizer", onAppointmentComposeHandler);
 //Office.actions.associate("OnMessageSend", onMessageSendHandler);
 Office.actions.associate("OnAppointmentSend", onAppointmentSendHandler);
 Office.actions.associate("OnAppointmentAttendeesChanged", onAppointmentAttendeesChangedHandler);
