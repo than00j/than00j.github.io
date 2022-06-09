@@ -12,8 +12,8 @@
       /*var element = document.querySelector('.MessageBanner');
       messageBanner = new components.MessageBanner(element);
       messageBanner.hideBanner(); */
-      loadProps();
-	  getStartTime();
+      getStartTime();
+	    loadProps();
     });
   };
   
@@ -82,13 +82,13 @@
   function loadProps() {
     //var item = Office.context.mailbox.item.organizer;
 
-    document.getElementById('dateTimeCreated').text("test"); //item.requiredAttendees);
+    document.getElementById('dateTimeCreated').text = "test"; //item.requiredAttendees);
     $('#dateTimeModified').text(item.start.toLocaleString());
     $('#itemClass').text(item.itemClass);
     $('#itemId').text(item.itemId);
     $('#itemType').text(item.itemType);
 
-    $('#message-props').show();
+    /*$('#message-props').show();
 
     $('#attachments').html(buildAttachmentsString(item.attachments));
     $('#cc').html(buildEmailAddressesString(item.cc));
@@ -98,7 +98,7 @@
     $('#normalizedSubject').text(item.normalizedSubject);
     $('#sender').html(buildEmailAddressString(item.sender));
     $('#subject').text(item.subject);
-    $('#to').html(buildEmailAddressesString(item.requiredAttendees));
+    $('#to').html(buildEmailAddressesString(item.requiredAttendees)); */
   }
 
   // Helper function for displaying notifications
