@@ -8,12 +8,11 @@
   Office.initialize = function(){ //(reason) {
 	  item = Office.context.mailbox.item.organizer;
     $(document).ready(function () {
-		//getStartTime();
-      /*var element = document.querySelector('.MessageBanner');
-      messageBanner = new components.MessageBanner(element);
-      messageBanner.hideBanner(); */
       getStartTime();
-	    loadProps();
+      var element = document.querySelector('.MessageBanner');
+      messageBanner = new components.MessageBanner(element);
+      messageBanner.hideBanner();
+      loadProps();
     });
   };
   
@@ -23,6 +22,7 @@
             if (asyncResult.status == Office.AsyncResultStatus.Failed){
                 write(asyncResult.error.message);
 				document.getElementById('message').innerText += asyncResult.error.message;
+		    showNotification("Error", asyncResult.error.message); //showNotification(header, content)
             }
             else {
                 // Successfully got the start time, display it, first in UTC and 
@@ -30,6 +30,7 @@
                 write ('The start time in UTC is: ' + asyncResult.value.toString());
                 write ('The start time in local time is: ' + asyncResult.value.toLocaleString());
 				document.getElementById('message').innerText += asyncResult.value.toLocaleString();
+		    showNotification("Showing start time:", asyncResult.value.toLocaleString()); //showNotification(header, content)
             }
         });
 }
