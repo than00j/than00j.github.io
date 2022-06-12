@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   var messageBanner;
@@ -8,11 +8,13 @@
   Office.initialize = function(reason) {
 	  item = Office.context.mailbox.item;
     $(document).ready(function () {
-      getStartTime();
       var element = document.querySelector('.MessageBanner');
       messageBanner = new components.MessageBanner(element);
       messageBanner.hideBanner();
+	    showNotification("Testing", "LoadProps & getStarttime function will be triggered!");
       loadProps();
+	    getStartTime();
+      
 	    showNotification("Testing", "All functions triggered!");
     });
   };
