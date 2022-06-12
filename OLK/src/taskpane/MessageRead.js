@@ -3,6 +3,18 @@
 
   var messageBanner;
   var item;
+	
+Office.onReady((info) => {
+  if (info.host === Office.HostType.Outlook) {
+    document.getElementById("sideload-msg").style.display = "none";
+    //document.getElementById("app-body").style.display = "flex";
+    //document.getElementById("run").onclick = run;
+	        var element = document.querySelector('.MessageBanner');
+      messageBanner = new components.MessageBanner(element);
+      messageBanner.hideBanner();
+	  showNotification("Testing", "This notification was triggered from Office On ready!");
+  }
+});
 
   // The Office initialize function must be run each time a new page is loaded.
   Office.initialize = function(reason) {
