@@ -6,7 +6,7 @@
 
   // The Office initialize function must be run each time a new page is loaded.
   Office.initialize = function(){ //(reason) {
-	  item = Office.context.mailbox.item.organizer;
+	  item = Office.context.mailbox.item;
     $(document).ready(function () {
       getStartTime();
       var element = document.querySelector('.MessageBanner');
