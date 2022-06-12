@@ -119,6 +119,7 @@ Office.onReady((info) => {
 
   // Helper function for displaying notifications
   function showNotification(header, content) {
+	  document.querySelector(".MessageBanner").style.backgroundColor = "red";
     $("#notificationHeader").text(header);
     $("#notificationBody").text(content);
     messageBanner.showBanner();
